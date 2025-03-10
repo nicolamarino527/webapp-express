@@ -1,0 +1,22 @@
+{
+  "name": "webapp-express",
+  "version": "1.0.0",
+  "description": "back-end for movies web app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "watch": " node --watch app,js"
+  },
+  "keywords": [
+    "movies",
+    "reviews",
+    "webapp",
+    "express"
+  ],
+  "author": "Nicola Marino",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
