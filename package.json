@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "watch": " node --watch app,js"
+    "watch": " node --env-file=.env --watch app.js"
   },
   "keywords": [
     "movies",
@@ -17,6 +17,8 @@
   "author": "Nicola Marino",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2"
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "mysql2": "^3.13.0"
   }
 }
