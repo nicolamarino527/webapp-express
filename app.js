@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT;
 
+// importiamo cors
+const cors = require('cors')
 
 
 // importiamo il router
