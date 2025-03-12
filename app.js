@@ -7,23 +7,11 @@ const port = process.env.PORT;
 
 // importiamo il router
 const movieRouter = require('./controller/moviesController');
-const bodyParser = require('body-parser');
+
+
+// importiamo il middleware di gestione errore server
+const errorsHandler = require("./middlewares/errorsHandler");
+const imagePathMiddleware = require('./middlewares/imagePath');
+const notFound = require("./middlewares/notFound");
+
 // configuriamo il body parser
-app.use(express.json());
-
-// definiamo la cartella per i file statici
-app.use(express.static('public'));
-
-
-// definiamo la rotta posts
-app.use('/movies', movieRouter)
-
-// aggiungiam la rotta home
-app.get('/', (req, res) => {
-    res.send('films')
-});
-
-app.listen(port, () => {
-    console.log(`server in ascolto su ${port}`);
-})
-
