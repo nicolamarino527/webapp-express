@@ -18,7 +18,7 @@ const notFound = require("./middlewares/notFound");
 
 
 // cartella per i file statici
-app.use(express.static('public')); s
+app.use(express.static('public'));
 
 // middleware cors
 app.use(cors({ origin: "http://localhost:5173" }))
