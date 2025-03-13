@@ -13,7 +13,7 @@ function index(req, res) {
 
     connection.query(moviesSql, (err, result) => {
         // in caso di errore
-        if (err) return res.status(500).json({ error: 'Database query failed' });
+        if (err) return res.status(500).json({ error: 'Database query failed(index)' });
 
         // map della risposta
         const movies = result.map(movie => {
@@ -34,13 +34,13 @@ function show(req, res) {
     const { id } = req.params;
 
     // query di richiesta
-    const movieDetail = "SELECT * FROM movies WHERE movie.id = ?";
+    const movieDetail = "SELECT * FROM movies WHERE id = ?";
     const movieReview = "SELECT * FROM reviews WHERE movie_id = ?";
 
     // richiediamo i risultati del singolo libro
     connection.query(movieDetail, [id], (err, movieResult) => {
-        // se la queri non va a buon fine
-        if (err) return res.status(500).json({ error: 'Database query failed' });
+        // se la query non va a buon fine
+        if (err) return res.status(500).json({ error: 'Database query failed(show)' });
 
         // se il film non viene trovato
         if (movieResult.length === 0) return res.status(404).json({ error: 'Movie not found' });
@@ -64,10 +64,6 @@ function show(req, res) {
     })
 
 }
-
-
-function store(req, res) { }
-
 
 
 module.exports = { index, show };
