@@ -8,7 +8,7 @@ const cors = require('cors')
 
 
 // importiamo il router
-const movieRouter = require('./controller/moviesController');
+const movieRouter = require('./routers/movies');
 
 
 // importiamo il middleware di gestione errore server
@@ -31,6 +31,9 @@ app.use(express.json());
 app.get('/api', (req, res) => {
     res.send("rotta home");
 })
+
+// rotta movie
+app.use('/api/movies', movieRouter);
 
 // middleware path 
 app.use(imagePathMiddleware);

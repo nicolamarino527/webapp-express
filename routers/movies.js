@@ -4,14 +4,14 @@ const router = express.Router();
 
 
 // importiam il controller
-const controller = require('../controller/moviesController');
+const moviesController = require('../controller/moviesController');
 
 
 // rotte crud
 
-router.get('/', controller.index);
+router.get('/', moviesController.index);
 
-router.get('/:id', controller.show);
+router.get('/:id', moviesController.show);
 
 
 // esportiamo il modulo

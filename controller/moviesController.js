@@ -70,4 +70,4 @@ function store(req, res) { }
 
 
 
-module.exports = { index, store };
+module.exports = { index, show };
